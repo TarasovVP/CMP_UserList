@@ -1,6 +1,6 @@
 package presentation
 
-import com.tarasovvp.kmpuserlist.di.getUserListUseCase
+import com.tarasovvp.cmpuserlist.di.getUserListUseCase
 import kotlinx.browser.document
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch

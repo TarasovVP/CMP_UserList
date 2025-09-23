@@ -1,7 +1,7 @@
 package presentation
 
-import com.tarasovvp.kmpuserlist.di.getUserListUseCase
-import com.tarasovvp.kmpuserlist.domain.model.User
+import com.tarasovvp.cmpuserlist.di.getUserListUseCase
+import com.tarasovvp.cmpuserlist.domain.model.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

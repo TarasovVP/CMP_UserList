@@ -96,7 +96,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.tarasovvp.kmpuserlist"
+    namespace = "com.tarasovvp.cmpuserlist"
     compileSdk = 34
     defaultConfig {
         minSdk = 28
@@ -110,7 +110,7 @@ android {
 sqldelight {
     databases {
         create("UserDatabase") {
-            packageName.set("com.tarasovvp.kmpuserlist.db")
+            packageName.set("com.tarasovvp.cmpuserlist.db")
             generateAsync.set(true)
         }
     }

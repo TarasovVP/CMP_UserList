@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KMP_UserList"
+rootProject.name = "CMP_UserList"
 include(":androidApp")
 include(":shared")
 include(":desktopApp")

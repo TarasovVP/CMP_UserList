@@ -1,4 +1,4 @@
-import com.tarasovvp.kmpuserlist.di.initKoin
+import com.tarasovvp.cmpuserlist.di.initKoin
 import presentation.App
 import javax.swing.SwingUtilities
 
