@@ -64,6 +64,7 @@ kotlin {
             implementation(libs.sqldelight.coroutines.extensions)
             // Koin
             implementation(libs.koin.core)
+            implementation(libs.koin.compose.viewmodel)
             // Compose
             implementation(compose.runtime)
             implementation(compose.ui)
@@ -71,7 +72,9 @@ kotlin {
             implementation(compose.material3)
             implementation(compose.materialIconsExtended)
             implementation(libs.androidx.viewmodel.compose)
+            // Coil
             implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
         }
         androidMain.dependencies {
             // Ktor

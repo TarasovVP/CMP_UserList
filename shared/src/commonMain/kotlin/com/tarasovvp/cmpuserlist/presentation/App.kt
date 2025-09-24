@@ -17,23 +17,24 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun App() {
     MyApplicationTheme {
-        Content()
+        val viewModel: UsersViewModel = koinViewModel<UsersViewModel>()
+        val state by viewModel.uiState.collectAsState()
+        Content(viewModel, state)
     }
 }
 
 @Composable
-fun Content() {
+fun Content(viewModel: UsersViewModel, state: UiState) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-        val viewModel: UsersViewModel = viewModel(UsersViewModel::class)
-        val state by viewModel.uiState.collectAsState()
+
         Scaffold(
             topBar = {
                 TopAppBar(

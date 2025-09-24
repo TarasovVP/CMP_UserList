@@ -14,7 +14,7 @@ kotlin {
     jvm {
         binaries {
             executable {
-                mainClass.set("MainKt")
+                mainClass.set("com.tarasovvp.cmpuserlist.MainKt")
             }
         }
     }
