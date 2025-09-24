@@ -6,12 +6,13 @@ compose-material3 = "1.3.2"
 androidx-activityCompose = "1.10.1"
 kotlinxHtmlJs = "0.12.0"
 kotlinxSerialization = "1.9.0"
-coroutines = "1.7.3"
+coroutines = "1.8.1"
 coil = "3.3.0"
 viewmodelCompose = "2.9.3"
 ktor = "3.2.3"
 sqldelight = "2.0.2"
 koin = "4.1.1"
+compose-multiplatform = "1.9.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -49,6 +50,7 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 

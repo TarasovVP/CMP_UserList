@@ -7,6 +7,8 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.sqlDelight)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -62,6 +64,14 @@ kotlin {
             implementation(libs.sqldelight.coroutines.extensions)
             // Koin
             implementation(libs.koin.core)
+            // Compose
+            implementation(compose.runtime)
+            implementation(compose.ui)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
+            implementation(libs.androidx.viewmodel.compose)
+            implementation(libs.coil.compose)
         }
         androidMain.dependencies {
             // Ktor

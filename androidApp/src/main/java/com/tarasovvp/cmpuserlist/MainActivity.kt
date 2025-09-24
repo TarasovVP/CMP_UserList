@@ -1,18 +1,15 @@
-package com.tarasovvp.cmpuserlist.android
+package com.tarasovvp.cmpuserlist
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.tarasovvp.cmpuserlist.android.presentation.App
-import com.tarasovvp.cmpuserlist.android.presentation.MyApplicationTheme
+import com.tarasovvp.cmpuserlist.presentation.App
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
-                App()
-            }
+            App()
         }
     }
 }

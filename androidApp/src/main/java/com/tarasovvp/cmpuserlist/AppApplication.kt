@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.android
+package com.tarasovvp.cmpuserlist
 
 import android.app.Application
 import com.tarasovvp.cmpuserlist.di.initKoin

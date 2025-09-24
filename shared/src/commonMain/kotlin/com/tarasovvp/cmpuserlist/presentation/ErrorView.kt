@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.android.presentation
+package com.tarasovvp.cmpuserlist.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,7 +27,7 @@ fun ErrorView(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = if (message.isBlank()) "Something went wrong" else message,
+            text = message.ifBlank { "Something went wrong" },
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.error
         )

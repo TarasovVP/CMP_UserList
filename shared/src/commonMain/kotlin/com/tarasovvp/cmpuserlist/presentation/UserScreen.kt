@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.android.presentation
+package com.tarasovvp.cmpuserlist.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

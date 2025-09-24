@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.android.presentation
+package com.tarasovvp.cmpuserlist.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

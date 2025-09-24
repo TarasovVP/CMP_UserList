@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.tarasovvp.cmpuserlist.android.presentation
+package com.tarasovvp.cmpuserlist.presentation
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,20 +13,27 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun App() {
+    MyApplicationTheme {
+        Content()
+    }
+}
+
+@Composable
+fun Content() {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
         val viewModel: UsersViewModel = viewModel(UsersViewModel::class)
-        val state by viewModel.uiState.collectAsStateWithLifecycle()
+        val state by viewModel.uiState.collectAsState()
         Scaffold(
             topBar = {
                 TopAppBar(

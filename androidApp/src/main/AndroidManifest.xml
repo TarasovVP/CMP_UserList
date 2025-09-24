@@ -6,10 +6,10 @@
     <application
         android:allowBackup="false"
         android:supportsRtl="true"
-        android:name=".AppApplication"
+        android:name="com.tarasovvp.cmpuserlist.AppApplication"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.tarasovvp.cmpuserlist.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

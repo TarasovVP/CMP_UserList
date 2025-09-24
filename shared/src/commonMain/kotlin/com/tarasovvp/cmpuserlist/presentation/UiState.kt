@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.android.presentation
+package com.tarasovvp.cmpuserlist.presentation
 
 import com.tarasovvp.cmpuserlist.domain.model.User
 
