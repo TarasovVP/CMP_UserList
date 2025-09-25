@@ -104,6 +104,8 @@ kotlin {
             implementation(npm("@cashapp/sqldelight-sqljs-worker", "2.0.2"))
             implementation(npm("sql.js", "1.6.2"))
             implementation(devNpm("copy-webpack-plugin", "9.1.0"))
+            // Сoil
+            implementation("io.ktor:ktor-client-js:3.3.0")
         }
     }
 }

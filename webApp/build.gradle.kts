@@ -18,6 +18,7 @@ kotlin {
         jsMain.dependencies {
             implementation(projects.shared)
             implementation(libs.kotlinx.coroutines.core)
+            implementation(compose.foundation)
         }
     }
 }
