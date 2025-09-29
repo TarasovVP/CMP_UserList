@@ -38,7 +38,7 @@ fun UsersScreen(
     users: List<User>,
     isRefreshing: Boolean,
     modifier: Modifier = Modifier,
-    onRefresh: () -> Unit
+    onRefresh: () -> Unit,
 ) {
     PullToRefreshBox(
         isRefreshing = isRefreshing,
@@ -61,7 +61,7 @@ fun UsersScreen(
 @Composable
 fun UserRow(
     user: User,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Row(
         modifier = modifier
@@ -76,7 +76,13 @@ fun UserRow(
             modifier = Modifier
                 .size(56.dp)
                 .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.surfaceVariant)
+                .background(MaterialTheme.colorScheme.surfaceVariant),
+            onLoading = {
+                println("coilTAG Loading user.image ${user.image}")
+            },
+            onError = {
+                println("coilTAG Error loading image: ${it.result.throwable}")
+            }
         )
 
         Spacer(Modifier.width(12.dp))

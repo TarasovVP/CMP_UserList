@@ -6,19 +6,15 @@ plugins {
 
 kotlin {
     js(IR) {
-        browser {
-            commonWebpackConfig {
-                outputFileName = "webApp.js"
-            }
-        }
+        browser ()
         binaries.executable()
     }
 
     sourceSets {
         jsMain.dependencies {
             implementation(projects.shared)
-            implementation(libs.kotlinx.coroutines.core)
             implementation(compose.foundation)
+            implementation(npm("os-browserify", "0.3.0"))
         }
     }
 }

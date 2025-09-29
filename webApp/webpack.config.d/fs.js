@@ -3,10 +3,6 @@ config.resolve = {
         fs: false,
         path: false,
         crypto: false,
-        os: false,
+        os: require.resolve('os-browserify/browser'),
     },
-},
-config.devServer = {
-    ...config.devServer,
-    historyApiFallback: true,
 };

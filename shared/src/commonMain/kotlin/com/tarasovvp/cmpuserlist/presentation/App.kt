@@ -56,7 +56,7 @@ fun Content(viewModel: UsersViewModel, state: UiState) {
 
                 state.error != null -> {
                     ErrorView(
-                        message = state.error.orEmpty(),
+                        message = state.error,
                         onRetry = { viewModel.initialize() }
                     )
                 }
