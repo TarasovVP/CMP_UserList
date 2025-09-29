@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.presentation
+package com.tarasovvp.cmpuserlist.presentation.state
 
 import com.tarasovvp.cmpuserlist.domain.model.User
 

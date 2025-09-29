@@ -1,6 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
-package com.tarasovvp.cmpuserlist.presentation
+package com.tarasovvp.cmpuserlist.presentation.composable
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,21 +11,12 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import org.koin.compose.viewmodel.koinViewModel
+import com.tarasovvp.cmpuserlist.presentation.state.UiState
+import com.tarasovvp.cmpuserlist.presentation.viewmodel.UsersViewModel
 
-@Composable
-fun App() {
-    MyApplicationTheme {
-        val viewModel: UsersViewModel = koinViewModel<UsersViewModel>()
-        val state by viewModel.uiState.collectAsState()
-        Content(viewModel, state)
-    }
-}
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Content(viewModel: UsersViewModel, state: UiState) {
     Surface(

@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.presentation
+package com.tarasovvp.cmpuserlist.presentation.composable
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

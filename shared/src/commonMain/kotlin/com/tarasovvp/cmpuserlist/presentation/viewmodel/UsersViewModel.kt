@@ -1,15 +1,16 @@
-package com.tarasovvp.cmpuserlist.presentation
+package com.tarasovvp.cmpuserlist.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tarasovvp.cmpuserlist.di.getUserListUseCase
+import com.tarasovvp.cmpuserlist.domain.usecase.GetUserListUseCase
+import com.tarasovvp.cmpuserlist.presentation.state.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class UsersViewModel() : ViewModel() {
+class UsersViewModel(private val getUserListUseCase: GetUserListUseCase) : ViewModel() {
 
     private val _uiState = MutableStateFlow(UiState())
     val uiState: StateFlow<UiState> = _uiState.asStateFlow()
@@ -22,7 +23,7 @@ class UsersViewModel() : ViewModel() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
             runCatching {
-                getUserListUseCase().execute()
+                getUserListUseCase.execute()
             }.onSuccess { list ->
                 _uiState.update { it.copy(isLoading = false, users = list) }
             }.onFailure { e ->
