@@ -22,10 +22,7 @@ kotlin {
     sourceSets {
         jvmMain.dependencies {
             implementation(projects.shared)
-
             implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutines.core)
-            implementation(libs.kotlinx.coroutines.swing)
         }
     }
 }

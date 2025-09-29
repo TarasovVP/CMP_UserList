@@ -76,13 +76,7 @@ fun UserRow(
             modifier = Modifier
                 .size(56.dp)
                 .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.surfaceVariant),
-            onLoading = {
-                println("coilTAG Loading user.image ${user.image}")
-            },
-            onError = {
-                println("coilTAG Error loading image: ${it.result.throwable}")
-            }
+                .background(MaterialTheme.colorScheme.surfaceVariant)
         )
 
         Spacer(Modifier.width(12.dp))

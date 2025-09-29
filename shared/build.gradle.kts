@@ -91,6 +91,7 @@ kotlin {
             implementation(libs.sqldelight.native.driver)
         }
         jvmMain.dependencies {
+            implementation(libs.kotlinx.coroutines.swing)
             // Ktor
             implementation(libs.ktor.client.java)
             // SQLDelight
