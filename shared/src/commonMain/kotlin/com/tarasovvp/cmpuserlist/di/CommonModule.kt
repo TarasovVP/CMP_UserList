@@ -1,6 +1,5 @@
 package com.tarasovvp.cmpuserlist.di
 
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tarasovvp.cmpuserlist.data.database.SharedDatabase
 import com.tarasovvp.cmpuserlist.data.database.datasource.LocalUserDataSource
 import com.tarasovvp.cmpuserlist.data.database.datasource.LocalUserDataSourceImpl

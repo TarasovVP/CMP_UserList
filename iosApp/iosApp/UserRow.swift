@@ -11,19 +11,31 @@ struct UserRow: View {
 
     var fullName: String {
         let first = user.value(forKey: "firstName") as? String ?? ""
-        let last  = user.value(forKey: "lastName")  as? String ?? ""
+        let last = user.value(forKey: "lastName") as? String ?? ""
         return "\(first) \(last)"
     }
-    var email: String { user.value(forKey: "email") as? String ?? "" }
-    var phone: String { user.value(forKey: "phone") as? String ?? "" }
+    var email: String {
+        user.value(forKey: "email") as? String ?? ""
+    }
+    var phone: String {
+        user.value(forKey: "phone") as? String ?? ""
+    }
     var imageUrl: URL? {
-        if let s = user.value(forKey: "image") as? String { return URL(string: s) }
+        if let s = user.value(forKey: "image") as? String {
+            return URL(string: s)
+        }
         return nil
     }
-    var birth: String { user.value(forKey: "birthDate") as? String ?? "" }
+    var birth: String {
+        user.value(forKey: "birthDate") as? String ?? ""
+    }
     var ageText: String {
-        if let age = user.value(forKey: "age") as? Int32 { return "\(Int(age)) years old" }
-        if let age = user.value(forKey: "age") as? Int   { return "\(age) years old" }
+        if let age = user.value(forKey: "age") as? Int32 {
+            return "\(Int(age)) years old"
+        }
+        if let age = user.value(forKey: "age") as? Int {
+            return "\(age) years old"
+        }
         return ""
     }
 

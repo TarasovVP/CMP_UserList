@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ErrorView(
     message: String,
-    onRetry: () -> Unit
+    onRetry: () -> Unit,
 ) {
     Column(
         modifier = Modifier

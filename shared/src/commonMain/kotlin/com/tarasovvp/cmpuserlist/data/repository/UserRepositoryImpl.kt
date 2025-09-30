@@ -8,7 +8,7 @@ import com.tarasovvp.cmpuserlist.domain.repository.UserRepository
 
 class UserRepositoryImpl(
     private val remote: RemoteUserDataSource,
-    private val local: LocalUserDataSource
+    private val local: LocalUserDataSource,
 ) : UserRepository {
     override suspend fun getUsers(forceRefresh: Boolean): List<User> {
         val cached = local.getUsers()
