@@ -22,8 +22,10 @@ class UsersViewModel(private val getUserListUseCase: GetUserListUseCase) : ViewM
     fun initialize() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
+            val cached = runCatching { getUserListUseCase.execute(forceRefresh = false) }.getOrDefault(emptyList())
+            _uiState.update { it.copy(isLoading = false, error = null, users = cached) }
             runCatching {
-                getUserListUseCase.execute()
+                getUserListUseCase.execute(true)
             }.onSuccess { list ->
                 _uiState.update { it.copy(isLoading = false, users = list) }
             }.onFailure { e ->

@@ -13,7 +13,10 @@ class UserRepositoryImpl(
     override suspend fun getUsers(forceRefresh: Boolean): List<User> {
         val cached = local.getUsers()
         if (cached.isNotEmpty() && !forceRefresh) return cached
-        val fresh = remote.fetchUsers().map { it.toDomain() }
+        val fresh = remote.fetchUsers()
+            .map { remoteUser ->
+                remoteUser.toDomain()
+            }
         local.replaceAll(fresh)
         return fresh
     }
