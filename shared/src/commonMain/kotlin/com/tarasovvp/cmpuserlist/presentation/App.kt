@@ -1,11 +1,13 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.tarasovvp.cmpuserlist.presentation.composable
+package com.tarasovvp.cmpuserlist.presentation
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import com.tarasovvp.cmpuserlist.presentation.theme.AppTheme
+import com.tarasovvp.cmpuserlist.presentation.composable.Content
 import com.tarasovvp.cmpuserlist.presentation.viewmodel.UsersViewModel
 import org.koin.compose.viewmodel.koinViewModel
 

@@ -1,6 +1,5 @@
 package com.tarasovvp.cmpuserlist.presentation.composable
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Phone
@@ -21,39 +19,26 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import coil3.compose.AsyncImage
 import com.tarasovvp.cmpuserlist.domain.model.User
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun UsersScreen(
+fun UsersList(
     users: List<User>,
-    isRefreshing: Boolean,
-    modifier: Modifier = Modifier,
-    onRefresh: () -> Unit,
 ) {
-    PullToRefreshBox(
-        isRefreshing = isRefreshing,
-        onRefresh = onRefresh,
-        modifier = modifier.fillMaxSize()
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            items(users, key = { it.email }) { user ->
-                UserRow(user)
-            }
+        items(users, key = { it.email }) { user ->
+            UserRow(user)
         }
     }
 }
@@ -69,14 +54,9 @@ fun UserRow(
             .padding(vertical = 6.dp),
         verticalAlignment = Alignment.Top
     ) {
-        AsyncImage(
-            model = user.image,
-            contentDescription = "${user.firstName} ${user.lastName}",
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(56.dp)
-                .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.surfaceVariant)
+        UserAvatar(
+            imageUrl = user.image,
+            description = "${user.firstName} ${user.lastName}"
         )
 
         Spacer(Modifier.width(12.dp))

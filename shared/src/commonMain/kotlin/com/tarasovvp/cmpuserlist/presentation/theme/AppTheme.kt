@@ -1,4 +1,4 @@
-package com.tarasovvp.cmpuserlist.presentation.composable
+package com.tarasovvp.cmpuserlist.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

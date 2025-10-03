@@ -70,6 +70,7 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(compose.materialIconsExtended)
+            // ViewModel
             implementation(libs.androidx.viewmodel.compose)
             // Coil
             implementation(libs.coil.compose)

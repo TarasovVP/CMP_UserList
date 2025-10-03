@@ -51,13 +51,8 @@ fun Content(viewModel: UsersViewModel, state: UiState) {
                 }
 
                 else -> {
-                    UsersScreen(
-                        users = state.users,
-                        isRefreshing = state.isLoading,
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
-                        { viewModel.initialize() }
+                    UsersList(
+                        users = state.users
                     )
                 }
             }
