@@ -31,9 +31,10 @@ import com.tarasovvp.cmpuserlist.domain.model.User
 @Composable
 fun UsersList(
     users: List<User>,
+    modifier: Modifier = Modifier,
 ) {
     LazyColumn(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)

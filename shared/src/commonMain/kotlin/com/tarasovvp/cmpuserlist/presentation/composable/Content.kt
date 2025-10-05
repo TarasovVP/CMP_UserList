@@ -47,7 +47,8 @@ fun Content(state: UiState, onRetry: () -> Unit) {
 
             else -> {
                 UsersList(
-                    users = state.users
+                    users = state.users,
+                    modifier = Modifier.padding(innerPadding)
                 )
             }
         }
