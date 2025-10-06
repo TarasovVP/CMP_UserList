@@ -11,7 +11,7 @@ android {
     namespace = "com.tarasovvp.cmpuserlist.android"
     compileSdk = 36
     defaultConfig {
-        applicationId = "com.tarasovvp.cmp_userlist.android"
+        applicationId = "com.tarasovvp.cmpuserlist.android"
         minSdk = 28
         targetSdk = 36
         versionCode = 1
