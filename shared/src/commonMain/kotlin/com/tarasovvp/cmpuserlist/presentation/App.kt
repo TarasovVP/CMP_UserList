@@ -14,7 +14,7 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun App() {
     AppTheme {
-        val viewModel: UsersViewModel = koinViewModel<UsersViewModel>()
+        val viewModel: UsersViewModel = koinViewModel()
         val state by viewModel.uiState.collectAsState()
         Content(state = state, onRetry = { viewModel.initialize() })
     }
