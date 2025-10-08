@@ -111,7 +111,7 @@ kotlin {
 
 android {
     namespace = "com.tarasovvp.cmpuserlist"
-    compileSdk = 34
+    compileSdk = 36
     defaultConfig {
         minSdk = 28
     }
