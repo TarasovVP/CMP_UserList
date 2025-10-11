@@ -126,6 +126,7 @@ sqldelight {
         create("UserDatabase") {
             packageName.set("com.tarasovvp.cmpuserlist.db")
             generateAsync.set(true)
+            version = "1.0"
         }
     }
 }
