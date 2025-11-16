@@ -4,8 +4,8 @@ package com.tarasovvp.cmpuserlist.presentation
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.tarasovvp.cmpuserlist.presentation.composable.Content
 import com.tarasovvp.cmpuserlist.presentation.theme.AppTheme
 import com.tarasovvp.cmpuserlist.presentation.viewmodel.UsersViewModel
@@ -15,7 +15,7 @@ import org.koin.compose.viewmodel.koinViewModel
 fun App() {
     AppTheme {
         val viewModel: UsersViewModel = koinViewModel()
-        val state by viewModel.uiState.collectAsState()
+        val state by viewModel.uiState.collectAsStateWithLifecycle()
         Content(state = state, onRetry = { viewModel.initialize() })
     }
 }
