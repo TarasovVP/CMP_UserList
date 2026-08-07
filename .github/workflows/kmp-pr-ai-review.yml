@@ -1,0 +1,45 @@
+name: KMP PR AI Review
+
+on:
+  pull_request_target:
+    types: [ready_for_review]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  ready-for-review:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    uses: TarasovVP/kmp-pr-ai-reviewer/.github/workflows/reusable-review.yml@c9d83a255f05ed5a4601d3546034333d4b6309d5
+    with:
+      repository: ${{ github.repository }}
+      pr_number: ${{ github.event.pull_request.number }}
+      trigger: ready_for_review
+      requested_by: ${{ github.actor }}
+      model: ${{ vars.AI_MODEL || 'gpt-5.6-terra' }}
+      reasoning_effort: ${{ vars.AI_REASONING_EFFORT || 'medium' }}
+    secrets:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+  manual-review:
+    if: >-
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request != null &&
+      github.event.comment.body == '/ai-review' &&
+      contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
+    uses: TarasovVP/kmp-pr-ai-reviewer/.github/workflows/reusable-review.yml@c9d83a255f05ed5a4601d3546034333d4b6309d5
+    with:
+      repository: ${{ github.repository }}
+      pr_number: ${{ github.event.issue.number }}
+      trigger: manual
+      requested_by: ${{ github.actor }}
+      model: ${{ vars.AI_MODEL || 'gpt-5.6-terra' }}
+      reasoning_effort: ${{ vars.AI_REASONING_EFFORT || 'medium' }}
+    secrets:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
