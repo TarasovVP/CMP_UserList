@@ -1,5 +1,9 @@
 # CMP UserList
 
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.3.0-7F52FF.svg?logo=kotlin&logoColor=white)](https://kotlinlang.org/docs/multiplatform.html)
+[![Compose Multiplatform](https://img.shields.io/badge/Compose_Multiplatform-1.10.0-4285F4.svg)](https://www.jetbrains.com/compose-multiplatform/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 A Kotlin Multiplatform app for displaying a list of users. One codebase — four platforms: **Android**, **iOS**, **Desktop** (JVM), and **Web**.
 
 ## About the project
@@ -11,6 +15,7 @@ The app fetches a list of users from the public [DummyJSON](https://dummyjson.co
 | Module       | Platform        |
 |-------------|-----------------|
 | `androidApp` | Android         |
+| `iosApp`     | iOS             |
 | `shared`     | Shared logic & UI |
 | `desktopApp` | Desktop (JVM)   |
 | `webApp`     | Browser         |
@@ -53,7 +58,8 @@ shared/src/commonMain/kotlin/com/tarasovvp/cmpuserlist/
 - **JDK:** 21  
 - **Android:** minSdk 28, compileSdk 36  
 - **Kotlin:** 2.3.0  
-- **Gradle:** version from wrapper (AGP 8.x)
+- **Gradle:** 8.13
+- **Android Gradle Plugin:** 8.11.2
 
 ## Build and run
 
@@ -98,6 +104,25 @@ Before the first iOS build, it’s recommended to build the shared framework:
 - **User model:** first name, last name, age, gender, email, phone, birth date, avatar URL.  
 - **Cache:** SQLite via SQLDelight; the app shows cache first, then updates from the API. On network errors, the last cached list is kept.
 
+## Related implementations
+
+The same user-list scenario is used to compare different cross-platform approaches:
+
+| Project | Approach |
+|---------|----------|
+| [KMP_UserList](https://github.com/TarasovVP/KMP_UserList) | Kotlin Multiplatform with platform-specific UI |
+| **CMP_UserList** | Kotlin Multiplatform with shared Compose Multiplatform UI |
+| [flutter_user_list](https://github.com/TarasovVP/flutter_user_list) | Flutter and Dart |
+| [react-native-user-list](https://github.com/TarasovVP/react-native-user-list) | React Native and TypeScript |
+
+## Related articles
+
+- [KMP: Network Requests, Database, and Dependency Injection](https://medium.com/@vptarasov/kmp-network-requests-database-and-dependency-injection-5888ffe48e1e)
+- [KMP: A Single Project for All Platforms](https://medium.com/@vptarasov/kmp-a-single-project-for-all-platforms-ed30820522b3)
+- [KMP: Unified UI with Compose Multiplatform](https://medium.com/@vptarasov/kmp-unified-ui-with-compose-multiplatform-a8c13a52162b)
+- [Flutter from a KMP Developer’s Perspective](https://levelup.gitconnected.com/flutter-from-a-kmp-developers-perspective-c858644c3179)
+- [React Native from a KMP Developer’s Perspective](https://levelup.gitconnected.com/react-native-from-a-kmp-developers-perspective-346c356f7457)
+
 ## License
 
-This project is for educational purposes. The DummyJSON API has its own terms of use.
+Licensed under the [Apache License 2.0](LICENSE). The DummyJSON API has its own terms of use.
